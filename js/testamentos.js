@@ -34,5 +34,6 @@ requestTestamentos.onerror = function() {
 requestTestamentos.send();
 
 function onSelectTestamentos(){
+	log.console("onSelectTestamentos");
 	carregarComboLivros();
 }

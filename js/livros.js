@@ -1,5 +1,7 @@
 function carregarComboLivros(){
 	
+	log.console("carregarComboLivros");
+	
 	let livrosDropdown = document.getElementById('livros-dropdown');
 	livrosDropdown.length = 0;
 
