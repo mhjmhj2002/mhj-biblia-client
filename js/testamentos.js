@@ -7,7 +7,7 @@ defaultOptionTestamentos.text = 'Escolha um item';
 testamentosDropdown.add(defaultOptionTestamentos);
 testamentosDropdown.selectedIndex = 0;
 
-const urlTestamentos = 'https://api.myjson.com/bins/7xq2x';
+const urlTestamentos = 'http://www.mhj.kinghost.net:21137/testamentos/getAll';
 
 const requestTestamentos = new XMLHttpRequest();
 requestTestamentos.open('GET', urlTestamentos, true);
@@ -32,3 +32,7 @@ requestTestamentos.onerror = function() {
 };
 
 requestTestamentos.send();
+
+function onSelectTestamentos(){
+	carregarComboLivros();
+}
