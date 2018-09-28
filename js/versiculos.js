@@ -1,7 +1,6 @@
 function onBuscarVersiculo(){
 	console.log("onBuscarVersiculo");
 
-	var lblVersiculo = document.getElementById('lbl-versiculo');
 	var vers = document.getElementById('versoes-dropdown').value;
 	var liv = document.getElementById('livros-dropdown').value;
 
@@ -14,7 +13,7 @@ function onBuscarVersiculo(){
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
 		for (let i = 0; i < data.length; i++) {
-			lblVersiculo.value = data[i].ver_texto;
+			document.getElementById('lbl-versiculo').value = data[i].ver_texto;
 		}
 	   } else {
 		// Reached the server, but it returned an error
