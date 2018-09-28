@@ -1,6 +1,6 @@
 function carregarComboLivros(){
 	
-	log.console("carregarComboLivros");
+	console.log("carregarComboLivros");
 	
 	let livrosDropdown = document.getElementById('livros-dropdown');
 	livrosDropdown.length = 0;
