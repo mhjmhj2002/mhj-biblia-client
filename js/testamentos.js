@@ -18,8 +18,8 @@ requestTestamentos.onload = function() {
     let option;
     for (let i = 0; i < data.length; i++) {
       option = document.createElement('option');
-      option.text = data[i].name;
-      option.value = data[i].abbreviation;
+      option.text = data[i].tes_nome;
+      option.value = data[i].tes_id;
       testamentosDropdown.add(option);
     }
    } else {
