@@ -12,9 +12,8 @@ function onBuscarVersiculo(){
 	requestVersiculos.onload = function() {
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
-		for (let i = 0; i < data.length; i++) {
-			document.getElementById('lbl-versiculo').value = data[i].ver_texto;
-		}
+		console.log(data.ver_texto);
+		document.getElementById('lbl-versiculo').innerHTML = data.ver_texto;
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
