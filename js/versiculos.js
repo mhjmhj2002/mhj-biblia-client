@@ -1,7 +1,7 @@
 function onBuscarVersiculo(){
 	console.log("onBuscarVersiculo");
 
-	let lblVersiculo = document.getElementById('lbl-versiculo');
+	var lblVersiculo = document.getElementById('lbl-versiculo');
 	var vers = document.getElementById('versoes-dropdown').value;
 	var liv = document.getElementById('livros-dropdown').value;
 
