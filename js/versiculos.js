@@ -13,7 +13,7 @@ function onBuscarVersiculo(){
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
 		console.log(data.ver_texto);
-		document.getElementById('lbl-versiculo').innerHTML = data.ver_texto;
+		document.getElementById('lbl-versiculo').innerHTML = data[0].ver_texto;
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
