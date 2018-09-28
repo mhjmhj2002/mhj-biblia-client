@@ -14,7 +14,7 @@ function onBuscarVersiculo(){
 	requestVersiculos.onload = function() {
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
-		lblVersiculo.innerHTML = data[i].ver_texto;
+		lblVersiculo.innerHTML = data.ver_texto;
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
