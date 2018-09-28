@@ -7,7 +7,7 @@ defaultOptionVersoes.text = 'Escolha um item';
 versoesDropdown.add(defaultOptionVersoes);
 versoesDropdown.selectedIndex = 0;
 
-const urlVersoes = 'localhost:21137/versoes/getAll';
+const urlVersoes = 'localhost/versoes/getAll';
 
 const requestVersoes = new XMLHttpRequest();
 requestVersoes.open('GET', urlVersoes, true);
