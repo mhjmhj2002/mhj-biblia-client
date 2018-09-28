@@ -2,9 +2,8 @@ function onBuscarVersiculo(){
 	console.log("onBuscarVersiculo");
 
 	let lblVersiculo = document.getElementById('lbl-versiculo');
-	var vers = document.getElementById('versoes-dropdown').value
-	var test = document.getElementById('testamentos-dropdown').value
-	var liv = document.getElementById('livros-dropdown').value
+	var vers = document.getElementById('versoes-dropdown').value;
+	var liv = document.getElementById('livros-dropdown').value;
 
 	const urlVersiculos = 'http://www.mhj.kinghost.net:21137/versiculos/versiculo/' + vers + '/' + liv + '/4/8';
 
@@ -14,7 +13,9 @@ function onBuscarVersiculo(){
 	requestVersiculos.onload = function() {
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
-		lblVersiculo.innerHTML = data.ver_texto;
+		for (let i = 0; i < data.length; i++) {
+			lblVersiculo.innerHTML = data[i].ver_texto;
+		}
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
