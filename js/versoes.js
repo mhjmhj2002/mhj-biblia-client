@@ -7,7 +7,7 @@ defaultOptionVersoes.text = 'Escolha um item';
 versoesDropdown.add(defaultOptionVersoes);
 versoesDropdown.selectedIndex = 0;
 
-const urlVersoes = 'http://mhj.nodejs7602.kinghost.net:21137/versoes/getAll';
+const urlVersoes = 'http://localhost:21137/versoes/getAll';//http://mhj.nodejs7602.kinghost.net:21137
 
 const requestVersoes = new XMLHttpRequest();
 requestVersoes.open('GET', urlVersoes, true);
