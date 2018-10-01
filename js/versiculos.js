@@ -17,7 +17,8 @@ function onBuscarVersiculo(){
 		const data = JSON.parse(requestVersiculos.responseText);
 		var result = "retorno";
 		for (let i = 0; i < data.length; i++) {
-			console.log(data.ver_texto);
+			console.log(data[i].ver_texto);
+			
 			
 		}
 		document.getElementById('lbl-versiculo').innerHTML = result;//data[0].ver_texto;
