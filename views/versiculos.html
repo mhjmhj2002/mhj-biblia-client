@@ -56,56 +56,48 @@
     </header>
 
     <section id="versiculos">
+
       <div class="row">
                <div class="col-lg-8 mx-auto">
                <label>Versão</label>
                <select class="form-control" id="versoes-dropdown" name="versoes"></select>
           </div>
+
           <div class="col-lg-8 mx-auto">
           <label>Testamento</label>
               <select class="form-control" id="testamentos-dropdown" name="testamentos" onchange="onSelectTestamentos()">
             </select>
           </div>
+
           <div class="col-lg-8 mx-auto">
           <label>Livro</label>
               <select class="form-control" id="livros-dropdown" name="livros">
             </select>
           </div>
-          
+
           <div class="col-lg-8 mx-auto">
           <label>Capítulo</label>
               <input class="form-control" type="number" id="inp-capitulo"/>
           </div>
-          
+
           <div class="col-lg-8 mx-auto">
           <label>Versículo de</label>
               <input class="form-control" type="number" id="inp-vers-ini"/>
           </div>
-          
+
           <div class="col-lg-8 mx-auto">
           <label>Versículo até</label>
               <input class="form-control" type="number" id="inp-vers-fim"/>
           </div>
-          
+
           <div class="col-lg-8 mx-auto">
             <p class="lead" id="lbl-versiculo">versículos</p>      
           </div>
+
+          <div class="col-lg-8 mx-auto">
           <button class="btn btn-primary" onclick="onBuscarVersiculo()">Buscar</button>
-        <!--div class="row">
-          <div class="col-lg-8 mx-auto">            
-            <select id="versoes-dropdown" name="versoes">
-            </select>
-            <select id="testamentos-dropdown" name="testamentos" onchange="onSelectTestamentos()">
-            </select>
-            <select id="livros-dropdown" name="livros">
-            </select>
-            <input type="number" id="inp-capitulo"/>
-            <input type="number" id="inp-vers-ini"/>
-            <input type="number" id="inp-vers-fim"/>
-            <p class="lead" id="lbl-versiculo">teste</p>
-            <button class="btn btn-primary" onclick="onBuscarVersiculo()">Buscar</button>
           </div>
-        </div-->
+
       </div>
     </section>
 
