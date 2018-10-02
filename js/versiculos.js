@@ -17,7 +17,10 @@ function onBuscarVersiculo(){
 		const data = JSON.parse(requestVersiculos.responseText);
 		var result = "";
 		for (let i = 0; i < data.length; i++) {
-			console.log(data[i].ver_texto);			
+			console.log(data[i].ver_texto);	
+            result += " ";
+            result += data[i].ver_versiculo;
+            result += " ";
 			result += data[i].ver_texto;
 		}
 		document.getElementById('lbl-versiculo').innerHTML = result;//data[0].ver_texto;
