@@ -15,11 +15,10 @@ function onBuscarVersiculo(){
 	requestVersiculos.onload = function() {
 	  if (requestVersiculos.status === 200) {
 		const data = JSON.parse(requestVersiculos.responseText);
-		var result = "retorno";
+		var result = "";
 		for (let i = 0; i < data.length; i++) {
-			console.log(data[i].ver_texto);
-			
-			result = data[i].ver_texto;
+			console.log(data[i].ver_texto);			
+			result += data[i].ver_texto;
 		}
 		document.getElementById('lbl-versiculo').innerHTML = result;//data[0].ver_texto;
 	   } else {
