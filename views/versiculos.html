@@ -57,7 +57,17 @@
 
     <section id="versiculos">
       <div class="container">
-        <div class="row">
+           <div class="form-group">
+               <label>Versão</label>
+               <select id="versoes-dropdown" name="versoes">
+			</select>
+          </div>
+          <div class="form-group">
+          <label>Testamento</label>
+              <select id="testamentos-dropdown" name="testamentos" onchange="onSelectTestamentos()">
+			</select>
+          </div>
+        <!--div class="row">
           <div class="col-lg-8 mx-auto">            
 			<select id="versoes-dropdown" name="versoes">
 			</select>
@@ -71,7 +81,7 @@
 			<p class="lead" id="lbl-versiculo">teste</p>
 			<button class="btn btn-primary" onclick="onBuscarVersiculo()">Buscar</button>
           </div>
-        </div>
+        </div-->
       </div>
     </section>
     
