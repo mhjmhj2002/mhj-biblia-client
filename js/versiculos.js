@@ -79,3 +79,54 @@ function onGetQuantidadeCapitulos(){
 
 	requestCapitulos.send();
 }
+
+function onGetQuantidadeVersiculos(){
+	console.log("onGetQuantidadeVersiculos");
+    
+		let versiculosDeDropdown = document.getElementById('versiculos-de-dropdown');
+		let versiculosAteDropdown = document.getElementById('versiculos-ate-dropdown');
+
+		versiculosDeDropdown.length = 0;		
+    versiculosAteDropdown.length = 0;
+
+    let defaultOptionVersiculos = document.createElement('option');
+    defaultOptionVersiculos.text = 'Escolha um item';
+          
+    versiculosDeDropdown.add(defaultOptionVersiculos);
+		versiculosDeDropdown.selectedIndex = 0;
+		versiculosAteDropdown.add(defaultOptionVersiculos);
+    versiculosAteDropdown.selectedIndex = 0;
+	
+	var cap = document.getElementById('capitulos-dropdown').value;
+
+	const urlVersiculos = 'http://www.mhj.kinghost.net:21137/versiculos/versiculo/' + cap;
+
+	const requestVersiculos = new XMLHttpRequest();
+	requestVersiculos.open('GET', urlVersiculos, true);
+
+	requestVersiculos.onload = function() {
+	  if (requestVersiculos.status === 200) {
+          
+          const data = JSON.parse(requestVersiculos.responseText);		
+		  console.log(data[0].qtde_versiculos);
+          var qtdeVersiculos = data[0].qtde_versiculos;
+          let option; 
+          
+          for (let i = 1; i <= qtdeVersiculos; i++) {
+              option = document.createElement('option');
+              option.text = i;
+              option.value = i;
+							versiculosDeDropdown.add(option);
+							versiculosAteDropdown.add(option);
+          }
+	   } else {
+		// Reached the server, but it returned an error
+	  }   
+	}
+
+	requestVersiculos.onerror = function() {
+	  console.error('An error occurred fetching the JSON from ' + urlVersiculos);
+	};
+
+	requestVersiculos.send();
+}
