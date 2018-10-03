@@ -47,11 +47,26 @@ function onGetQuantidadeCapitulos(){
 	requestCapitulos.open('GET', urlCapitulos, true);
 
 	requestCapitulos.onload = function() {
-	  if (requestCapitulos.status === 200) {
-		const data = JSON.parse(requestCapitulos.responseText);		
-		console.log(data[0].qtde_capitulos);
-		
-		document.getElementById('inp-capitulo').value = data[0].qtde_capitulos;
+	  if (requestCapitulos.status === 200) {                
+          let capitulosDropdown = document.getElementById('capitulos-dropdown');
+          capitulosDropdown.length = 0;
+          let defaultOptionCapitulos = document.createElement('option');
+          defaultOptionCapitulos.text = 'Escolha um item';
+          
+          capitulosDropdown.add(defaultOptionCapitulos);
+          capitulosDropdown.selectedIndex = 0;
+          
+          const data = JSON.parse(requestCapitulos.responseText);		
+		  console.log(data[0].qtde_capitulos);
+          var qtdeCapitulos = data[0].qtde_capitulos;
+          let option; 
+          
+          for (let i = 1; i <= qtdeCapitulos; i++) {
+              option = document.createElement('option');
+              option.text = i;
+              option.value = i;
+              capitulosDropdown.add(option);
+          }
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
