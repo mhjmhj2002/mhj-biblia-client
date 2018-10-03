@@ -3,7 +3,7 @@ function onBuscarVersiculo(){
 
 	var vers = document.getElementById('versoes-dropdown').value;
 	var liv = document.getElementById('livros-dropdown').value;
-	var cap = document.getElementById('inp-capitulo').value;
+	var cap = document.getElementById('capitulos-dropdown').value;
 	var verIni = document.getElementById('inp-vers-ini').value;
 	var verFim = document.getElementById('inp-vers-fim').value;
 
