@@ -35,3 +35,31 @@ function onBuscarVersiculo(){
 
 	requestVersiculos.send();
 }
+
+function onGetQuantidadeCapitulos(){
+	console.log("onGetQuantidadeCapitulos");
+	
+	var liv = document.getElementById('livros-dropdown').value;
+
+	const urlCapitulos = 'http://www.mhj.kinghost.net:21137/versiculos/capitulo/' + liv;
+
+	const requestCapitulos = new XMLHttpRequest();
+	requestCapitulos.open('GET', urlCapitulos, true);
+
+	requestCapitulos.onload = function() {
+	  if (requestCapitulos.status === 200) {
+		const data = JSON.parse(requestCapitulos.responseText);		
+		console.log(data[0].qtde_capitulos);
+		
+		document.getElementById('inp-capitulo').innerHTML = data[0].qtde_capitulos;
+	   } else {
+		// Reached the server, but it returned an error
+	  }   
+	}
+
+	requestCapitulos.onerror = function() {
+	  console.error('An error occurred fetching the JSON from ' + urlCapitulos);
+	};
+
+	requestCapitulos.send();
+}
