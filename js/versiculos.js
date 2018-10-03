@@ -51,7 +51,7 @@ function onGetQuantidadeCapitulos(){
 		const data = JSON.parse(requestCapitulos.responseText);		
 		console.log(data[0].qtde_capitulos);
 		
-		document.getElementById('inp-capitulo').innerHTML = data[0].qtde_capitulos;
+		document.getElementById('inp-capitulo').value = data[0].qtde_capitulos;
 	   } else {
 		// Reached the server, but it returned an error
 	  }   
