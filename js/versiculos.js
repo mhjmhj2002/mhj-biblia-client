@@ -89,12 +89,15 @@ function onGetQuantidadeVersiculos() {
 	versiculosDeDropdown.length = 0;
 	versiculosAteDropdown.length = 0;
 
-	let defaultOptionVersiculos = document.createElement('option');
-	defaultOptionVersiculos.text = 'Escolha um item';
+	let defaultOptionVersiculosDe = document.createElement('option');
+	defaultOptionVersiculosDe.text = 'Escolha um item';
 
-	versiculosDeDropdown.add(defaultOptionVersiculos);
+	let defaultOptionVersiculosAte = document.createElement('option');
+	defaultOptionVersiculosAte.text = 'Escolha um item';
+
+	versiculosDeDropdown.add(defaultOptionVersiculosDe);
 	versiculosDeDropdown.selectedIndex = 0;
-	versiculosAteDropdown.add(defaultOptionVersiculos);
+	versiculosAteDropdown.add(defaultOptionVersiculosAte);
 	versiculosAteDropdown.selectedIndex = 0;
 
 	var liv = document.getElementById('livros-dropdown').value;
