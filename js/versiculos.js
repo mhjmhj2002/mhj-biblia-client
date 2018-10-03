@@ -38,6 +38,14 @@ function onBuscarVersiculo(){
 
 function onGetQuantidadeCapitulos(){
 	console.log("onGetQuantidadeCapitulos");
+    
+    let capitulosDropdown = document.getElementById('capitulos-dropdown');
+    capitulosDropdown.length = 0;
+    let defaultOptionCapitulos = document.createElement('option');
+    defaultOptionCapitulos.text = 'Escolha um item';
+          
+    capitulosDropdown.add(defaultOptionCapitulos);
+    capitulosDropdown.selectedIndex = 0;
 	
 	var liv = document.getElementById('livros-dropdown').value;
 
@@ -47,14 +55,7 @@ function onGetQuantidadeCapitulos(){
 	requestCapitulos.open('GET', urlCapitulos, true);
 
 	requestCapitulos.onload = function() {
-	  if (requestCapitulos.status === 200) {                
-          let capitulosDropdown = document.getElementById('capitulos-dropdown');
-          capitulosDropdown.length = 0;
-          let defaultOptionCapitulos = document.createElement('option');
-          defaultOptionCapitulos.text = 'Escolha um item';
-          
-          capitulosDropdown.add(defaultOptionCapitulos);
-          capitulosDropdown.selectedIndex = 0;
+	  if (requestCapitulos.status === 200) {
           
           const data = JSON.parse(requestCapitulos.responseText);		
 		  console.log(data[0].qtde_capitulos);
