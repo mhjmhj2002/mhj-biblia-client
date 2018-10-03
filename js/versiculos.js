@@ -111,14 +111,19 @@ function onGetQuantidadeVersiculos() {
 			const data = JSON.parse(requestVersiculos.responseText);
 			console.log(data[0].qtde_versiculos);
 			var qtdeVersiculos = data[0].qtde_versiculos;
-			let option;
+			let optionVersDe;
+			let optionVersAte;
 
 			for (let i = 1; i <= qtdeVersiculos; i++) {
-				option = document.createElement('option');
-				option.text = i;
-				option.value = i;
-				versiculosDeDropdown.add(option);
-				versiculosAteDropdown.add(option);
+				optionVersDe = document.createElement('option');
+				optionVersDe.text = i;
+				optionVersDe.value = i;
+				versiculosDeDropdown.add(optionVersDe);
+				
+				optionVersAte = document.createElement('option');
+				optionVersAte.text = i;
+				optionVersAte.value = i;
+				versiculosAteDropdown.add(optionVersAte);
 			}
 		} else {
 			// Reached the server, but it returned an error
