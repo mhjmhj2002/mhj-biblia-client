@@ -1,5 +1,3 @@
-$("versoes-dropdown").chosen();
-
 function onBuscarVersiculo() {
 	console.log("onBuscarVersiculo");
 
