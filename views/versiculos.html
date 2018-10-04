@@ -17,9 +17,9 @@
   <link href="../css/scrolling-nav.css" rel="stylesheet">
 
   <!--Searcheble dropdownlist-->
-  <link rel="stylesheet" href="../css/searchable-dropdownlist/chosen.min.css">
-  <script src="../css/searchable-dropdownlist/jquery.min.js"></script>
-  <script src="../css/searchable-dropdownlist/chosen.jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/searchable-dropdownlist/selectstyle.css">
+  <script src="../css/searchable-dropdownlist/selectstyle.js"></script>
+  <script src="../js/jquery-3.3.1.min.js"></script>
 
 </head>
 
@@ -69,9 +69,6 @@
         <label>Versão</label>
         <select class="form-control" id="versoes-dropdown" name="versoes"></select>
       </div>
-      <script type="text/javascript">
-        $("form-control").chosen();
-      </script>
 
       <div class="col-lg-8 mx-auto">
         <label>Testamento</label>
@@ -121,6 +118,10 @@
     </div>
     <!-- /.container -->
   </footer>
+  
+  <script type="text/javascript">
+    $('select').selectstyle();
+  </script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
