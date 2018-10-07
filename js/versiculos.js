@@ -103,7 +103,7 @@ function onGetQuantidadeVersiculos() {
 	var liv = document.getElementById('livros-dropdown').value;
 	var cap = document.getElementById('capitulos-dropdown').value;
 
-	const urlVersiculos = 'http://www.mhj.kinghost.net:21137/versiculos/versiculo/' + liv + '/' + cap;
+	const urlVersiculos = 'http://www.mhj.kinghost.net:21137/versiculos/palavra/quantidade/' + liv + '/' + cap;
 
 	const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);
