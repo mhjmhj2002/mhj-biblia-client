@@ -7,7 +7,7 @@ defaultOptionTestamentos.text = 'Escolha um item';
 testamentosDropdown.add(defaultOptionTestamentos);
 testamentosDropdown.selectedIndex = 0;
 
-const urlTestamentos = 'http://www.mhj.net.br:21137/testamentos/getAll';
+const urlTestamentos = url + ':' + port + '/testamentos/getAll';
 
 const requestTestamentos = new XMLHttpRequest();
 requestTestamentos.open('GET', urlTestamentos, true);

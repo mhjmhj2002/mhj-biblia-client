@@ -7,7 +7,7 @@ function onBuscarVersiculo() {
 	var verIni = document.getElementById('versiculos-de-dropdown').value;
 	var verFim = document.getElementById('versiculos-ate-dropdown').value;
 
-	const urlVersiculos = 'http://www.mhj.net.br:21137/versiculos/versiculo/' + vers + '/' + liv + '/' + cap + '/' + verIni + '/' + verFim;
+	const urlVersiculos = url + ':' + port + '/versiculos/versiculo/' + vers + '/' + liv + '/' + cap + '/' + verIni + '/' + verFim;
 
 	const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);
@@ -49,7 +49,7 @@ function onGetQuantidadeCapitulos() {
 
 	var liv = document.getElementById('livros-dropdown').value;
 
-	const urlCapitulos = 'http://www.mhj.net.br:21137/versiculos/capitulo/' + liv;
+	const urlCapitulos = url + ':' + port + '/versiculos/capitulo/' + liv;
 
 	const requestCapitulos = new XMLHttpRequest();
 	requestCapitulos.open('GET', urlCapitulos, true);
@@ -103,7 +103,7 @@ function onGetQuantidadeVersiculos() {
 	var liv = document.getElementById('livros-dropdown').value;
 	var cap = document.getElementById('capitulos-dropdown').value;
 
-	const urlVersiculos = 'http://www.mhj.net.br:21137/versiculos/palavra/quantidade/' + liv + '/' + cap;
+	const urlVersiculos = url + ':' + port + '/versiculos/palavra/quantidade/' + liv + '/' + cap;
 
 	const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);

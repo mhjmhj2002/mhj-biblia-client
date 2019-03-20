@@ -11,7 +11,7 @@ function carregarComboLivros(){
 	livrosDropdown.add(defaultOptionLivros);
 	livrosDropdown.selectedIndex = 0;
 
-	const urlLivros = 'http://www.mhj.net.br:21137/livros/livro/' + document.getElementById('testamentos-dropdown').value;
+	const urlLivros = url + ':' + port + '/livros/livro/' + document.getElementById('testamentos-dropdown').value;
 
 	const request = new XMLHttpRequest();
 	request.open('GET', urlLivros, true);
