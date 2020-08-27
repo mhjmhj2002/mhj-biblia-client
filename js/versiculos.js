@@ -11,6 +11,7 @@ function onBuscarVersiculo() {
 
 	const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);
+	requestVersiculos.withCredentials = true;
 
 	requestVersiculos.onload = function () {
 		if (requestVersiculos.status === 200) {
