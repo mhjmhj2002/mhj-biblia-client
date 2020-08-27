@@ -11,6 +11,7 @@ const urlVersoes = url + ':' + port + '/versoes/getAll';
 
 const requestVersoes = new XMLHttpRequest();
 requestVersoes.open('GET', urlVersoes, true);
+requestVersoes.withCredentials = true;
 
 requestVersoes.onload = function() {
   if (requestVersoes.status === 200) {

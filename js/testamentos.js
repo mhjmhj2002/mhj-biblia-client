@@ -11,6 +11,7 @@ const urlTestamentos = url + ':' + port + '/testamentos/getAll';
 
 const requestTestamentos = new XMLHttpRequest();
 requestTestamentos.open('GET', urlTestamentos, true);
+requestTestamentos.withCredentials = true;
 
 requestTestamentos.onload = function() {
   if (requestTestamentos.status === 200) {
