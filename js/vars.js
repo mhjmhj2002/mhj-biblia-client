@@ -1,3 +1,3 @@
-const url = 'www.mhj.kinghost.net';
+const url = 'http://www.mhj.kinghost.net';
 //const url = 'localhost';
 const port = '21526';
