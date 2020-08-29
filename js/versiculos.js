@@ -12,6 +12,7 @@ function onBuscarVersiculo() {
 	$.ajax({
 		url: urlVersiculos
 	}).then(function(data) {
+		var result = "";
 		for (let i = 0; i < data.length; i++) {
 			console.log(data[i].ver_texto);
 			result += " ";
