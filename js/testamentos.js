@@ -10,7 +10,7 @@ testamentosDropdown.selectedIndex = 0;
 const urlTestamentos = url + ':' + port + '/testamentos/getAll';
 
 $.ajax({
-  url: urlVersoes
+  url: urlTestamentos
 }).then(function(data) {
   let option;
     for (let i = 0; i < data.length; i++) {
