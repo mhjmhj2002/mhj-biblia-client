@@ -9,7 +9,19 @@ testamentosDropdown.selectedIndex = 0;
 
 const urlTestamentos = url + ':' + port + '/testamentos/getAll';
 
-const requestTestamentos = new XMLHttpRequest();
+$.ajax({
+  url: urlVersoes
+}).then(function(data) {
+  let option;
+    for (let i = 0; i < data.length; i++) {
+      option = document.createElement('option');
+      option.text = data[i].tes_nome;
+      option.value = data[i].tes_id;
+      testamentosDropdown.add(option);
+    }
+});
+
+/*const requestTestamentos = new XMLHttpRequest();
 requestTestamentos.open('GET', urlTestamentos, true);
 requestTestamentos.withCredentials = true;
 
@@ -32,7 +44,7 @@ requestTestamentos.onerror = function() {
   console.error('An error occurred fetching the JSON from ' + urlTestamentos);
 };
 
-requestTestamentos.send();
+requestTestamentos.send();*/
 
 function onSelectTestamentos(){
 	console.log("onSelectTestamentos");

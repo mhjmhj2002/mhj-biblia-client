@@ -9,7 +9,20 @@ function onBuscarVersiculo() {
 
 	const urlVersiculos = url + ':' + port + '/versiculos/versiculo/' + vers + '/' + liv + '/' + cap + '/' + verIni + '/' + verFim;
 
-	const requestVersiculos = new XMLHttpRequest();
+	$.ajax({
+		url: urlVersiculos
+	}).then(function(data) {
+		for (let i = 0; i < data.length; i++) {
+			console.log(data[i].ver_texto);
+			result += " ";
+			result += data[i].ver_versiculo;
+			result += " ";
+			result += data[i].ver_texto;
+		}
+		document.getElementById('lbl-versiculo').innerHTML = result;//data[0].ver_texto;
+	});
+	
+	/*const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);
 	requestVersiculos.withCredentials = true;
 
@@ -34,7 +47,7 @@ function onBuscarVersiculo() {
 		console.error('An error occurred fetching the JSON from ' + urlVersiculos);
 	};
 
-	requestVersiculos.send();
+	requestVersiculos.send();*/
 }
 
 function onGetQuantidadeCapitulos() {
@@ -52,7 +65,22 @@ function onGetQuantidadeCapitulos() {
 
 	const urlCapitulos = url + ':' + port + '/versiculos/capitulo/' + liv;
 
-	const requestCapitulos = new XMLHttpRequest();
+	$.ajax({
+		url: urlCapitulos
+	  }).then(function(data) {
+		console.log(data[0].qtde_capitulos);
+			var qtdeCapitulos = data[0].qtde_capitulos;
+			let option;
+
+			for (let i = 1; i <= qtdeCapitulos; i++) {
+				option = document.createElement('option');
+				option.text = i;
+				option.value = i;
+				capitulosDropdown.add(option);
+			}
+	  });
+
+	/*const requestCapitulos = new XMLHttpRequest();
 	requestCapitulos.open('GET', urlCapitulos, true);
 
 	requestCapitulos.onload = function () {
@@ -78,7 +106,7 @@ function onGetQuantidadeCapitulos() {
 		console.error('An error occurred fetching the JSON from ' + urlCapitulos);
 	};
 
-	requestCapitulos.send();
+	requestCapitulos.send();*/
 }
 
 function onGetQuantidadeVersiculos() {
@@ -106,7 +134,28 @@ function onGetQuantidadeVersiculos() {
 
 	const urlVersiculos = url + ':' + port + '/versiculos/versiculo/' + liv + '/' + cap;
 
-	const requestVersiculos = new XMLHttpRequest();
+	$.ajax({
+		url: urlVersiculos
+	  }).then(function(data) {
+		console.log(data[0].qtde_versiculos);
+			var qtdeVersiculos = data[0].qtde_versiculos;
+			let optionVersDe;
+			let optionVersAte;
+
+			for (let i = 1; i <= qtdeVersiculos; i++) {
+				optionVersDe = document.createElement('option');
+				optionVersDe.text = i;
+				optionVersDe.value = i;
+				versiculosDeDropdown.add(optionVersDe);
+				
+				optionVersAte = document.createElement('option');
+				optionVersAte.text = i;
+				optionVersAte.value = i;
+				versiculosAteDropdown.add(optionVersAte);
+			}
+	  });
+
+	/*const requestVersiculos = new XMLHttpRequest();
 	requestVersiculos.open('GET', urlVersiculos, true);
 
 	requestVersiculos.onload = function () {
@@ -138,5 +187,5 @@ function onGetQuantidadeVersiculos() {
 		console.error('An error occurred fetching the JSON from ' + urlVersiculos);
 	};
 
-	requestVersiculos.send();
+	requestVersiculos.send();*/
 }

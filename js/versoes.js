@@ -12,12 +12,11 @@ const urlVersoes = url + ':' + port + '/versoes/getAll';
 $.ajax({
   url: urlVersoes
 }).then(function(data) {
-  const dado = data;
   let option;
-  for (let i = 0; i < dado.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     option = document.createElement('option');
-    option.text = dado[i].vrs_nome;
-    option.value = dado[i].vrs_id;
+    option.text = data[i].vrs_nome;
+    option.value = data[i].vrs_id;
     versoesDropdown.add(option);
   }
 });
