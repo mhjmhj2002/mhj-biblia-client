@@ -9,27 +9,15 @@ versoesDropdown.selectedIndex = 0;
 
 const urlVersoes = url + ':' + port + '/versoes/getAll';
 
-const requestVersoes = new XMLHttpRequest();
-requestVersoes.open('GET', urlVersoes, true);
-requestVersoes.withCredentials = true;
-
-requestVersoes.onload = function() {
-  if (requestVersoes.status === 200) {
-    const data = JSON.parse(requestVersoes.responseText);
-    let option;
-    for (let i = 0; i < data.length; i++) {
-      option = document.createElement('option');
-      option.text = data[i].vrs_nome;
-      option.value = data[i].vrs_id;
-      versoesDropdown.add(option);
-    }
-   } else {
-    // Reached the server, but it returned an error
-  }   
-}
-
-requestVersoes.onerror = function() {
-  console.error('An error occurred fetching the JSON from ' + urlVersoes);
-};
-
-requestVersoes.send();
+$.ajax({
+  url: urlVersoes
+}).then(function(data) {
+  const dado = data;
+  let option;
+  for (let i = 0; i < dado.length; i++) {
+    option = document.createElement('option');
+    option.text = dado[i].vrs_nome;
+    option.value = dado[i].vrs_id;
+    versoesDropdown.add(option);
+  }
+});
